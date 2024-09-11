@@ -35,21 +35,21 @@ return {
 
 		return {
 			-- Harpoon marked files 1 through 4
-			{ "<C-h>",     function() harpoon:list():select(1) end,         desc = "Harpoon buffer 1" },
-			{ "<C-t>",     function() harpoon:list():select(2) end,         desc = "Harpoon buffer 2" },
-			{ "<C-n>",     function() harpoon:list():select(3) end,         desc = "Harpoon buffer 3" },
-			{ "<C-s>",     function() harpoon:list():select(4) end,         desc = "Harpoon buffer 4" },
+			{ "<C-h>",     function() harpoon:list():select(1) end,                     desc = "Harpoon buffer 1" },
+			{ "<C-t>",     function() harpoon:list():select(2) end,                     desc = "Harpoon buffer 2" },
+			{ "<C-n>",     function() harpoon:list():select(3) end,                     desc = "Harpoon buffer 3" },
+			{ "<C-s>",     function() harpoon:list():select(4) end,                     desc = "Harpoon buffer 4" },
 
 			-- Harpoon next and previous.
-			{ "<C-S-P>",   function() harpoon:list():next() end,            desc = "Harpoon next buffer" },
-			{ "<C-S-N>",   function() harpoon:list():prev() end,            desc = "Harpoon prev buffer" },
+			{ "<C-S-P>",   function() harpoon:list():next() end,                        desc = "Harpoon next buffer" },
+			{ "<C-S-N>",   function() harpoon:list():prev() end,                        desc = "Harpoon prev buffer" },
 
 			-- Harpoon user interface.
-			--  { "<C-e>",     function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "Harpoon Toggle Menu" },
-			{ "<leader>a", function() harpoon:list():add() end,             desc = "Harpoon add file" },
+			{ "<C-e>",     function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "Harpoon Toggle Menu" },
+			{ "<leader>a", function() harpoon:list():add() end,                         desc = "Harpoon add file" },
 
 			-- Use Telescope as Harpoon user interface.
-			{ "<C-e>",     function() toggle_telescope(harpoon:list()) end, desc = "Open Harpoon window" },
+			-- { "<C-e>",     function() toggle_telescope(harpoon:list()) end, desc = "Open Harpoon window" },
 		}
 	end,
 

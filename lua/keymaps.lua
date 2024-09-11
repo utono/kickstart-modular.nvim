@@ -31,11 +31,6 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<leader>no', '<C-w>_<C-w>|', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>nn', '<C-w>=', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>dt', ':diffthis<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>do', ':diffoff<CR>', { noremap = true, silent = true })
-
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -49,5 +44,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+vim.keymap.set('n', ';', ':', { desc = 'Enter command mode' })
+vim.keymap.set('n', ':', ';', { desc = 'Repeat last f, t, F, or T movement' })
+
+vim.keymap.set('n', '<leader>no', '<C-w>_<C-w>|', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>nn', '<C-w>=', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>dt', ':diffthis<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>do', ':diffoff<CR>', { noremap = true, silent = true })
 
 -- vim: ts=2 sts=2 sw=2 et
