@@ -62,28 +62,28 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "lua",
-  callback = function()
-    -- Disable nvim-cmp for Lua files
-    local cmp = require('cmp')
-    cmp.setup.buffer({ enabled = false })
-
-    -- Adjust indentation and comments for Lua files
-    vim.opt_local.indentexpr = ""
-    vim.opt_local.autoindent = true
-    vim.opt_local.smartindent = true
-    vim.opt_local.formatoptions:remove("r")
-    vim.opt_local.formatoptions:remove("o")
-    vim.opt_local.comments = "" -- Disable automatic comment continuation
-
-    -- Set tabstop, shiftwidth, softtabstop, and expandtab for Lua files
-    vim.opt_local.tabstop = 2      -- ts=2: Number of spaces a tab counts for
-    vim.opt_local.shiftwidth = 2   -- sw=2: Number of spaces used for indentation
-    vim.opt_local.softtabstop = 2  -- sts=2: Number of spaces for a tab while editing
-    vim.opt_local.expandtab = true -- et: Convert tabs to spaces
-  end
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "lua",
+--   callback = function()
+--     -- Disable nvim-cmp for Lua files
+--     local cmp = require('cmp')
+--     cmp.setup.buffer({ enabled = false })
+--
+--     -- Adjust indentation and comments for Lua files
+--     vim.opt_local.indentexpr = ""
+--     vim.opt_local.autoindent = true
+--     vim.opt_local.smartindent = true
+--     vim.opt_local.formatoptions:remove("r")
+--     vim.opt_local.formatoptions:remove("o")
+--     vim.opt_local.comments = "" -- Disable automatic comment continuation
+--
+--     -- Set tabstop, shiftwidth, softtabstop, and expandtab for Lua files
+--     vim.opt_local.tabstop = 2      -- ts=2: Number of spaces a tab counts for
+--     vim.opt_local.shiftwidth = 2   -- sw=2: Number of spaces used for indentation
+--     vim.opt_local.softtabstop = 2  -- sts=2: Number of spaces for a tab while editing
+--     vim.opt_local.expandtab = true -- et: Convert tabs to spaces
+--   end
+-- })
 
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,resize,globals"
 -- vim: ts=2 sts=2 sw=2 et
