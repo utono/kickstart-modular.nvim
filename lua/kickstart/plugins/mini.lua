@@ -34,6 +34,15 @@ return {
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
+      require('mini.sessions').setup({
+        -- Customization options
+        autoread = false,                        -- Automatically read sessions on startup
+        autowrite = true,                        -- Automatically write sessions on exit
+        directory = '~/utono/ns',                -- Custom directory to store sessions
+        file = 'Session.vim',                    -- Default session filename
+        force = { read = false, write = true, delete = true },
+        verbose = { read = true, write = true }, -- Show session read/write notifications
+      })
     end,
   },
 }

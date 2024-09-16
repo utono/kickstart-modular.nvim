@@ -62,6 +62,8 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+vim.opt.hidden = false
+
 -- vim.api.nvim_create_autocmd("FileType", {
 --   pattern = "lua",
 --   callback = function()

@@ -54,4 +54,35 @@ vim.keymap.set('n', '<leader>nn', '<C-w>=', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>dt', ':diffthis<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>do', ':diffoff<CR>', { noremap = true, silent = true })
 
+-- Save session with user prompt
+vim.keymap.set('n', '<leader>ms', function()
+  local session_name = vim.fn.input('Save session as: ')
+  if session_name ~= '' then
+    MiniSessions.write(session_name)
+  else
+    print('Session name cannot be empty!')
+  end
+end, { noremap = true, silent = true })
+
+-- Load session with user prompt
+vim.keymap.set('n', '<leader>ml', function()
+  local session_name = vim.fn.input('Load session: ')
+  if session_name ~= '' then
+    MiniSessions.read(session_name)
+  else
+    print('Session name cannot be empty!')
+  end
+end, { noremap = true, silent = true })
+
+-- Delete session with user prompt
+vim.keymap.set('n', '<leader>md', function()
+  local session_name = vim.fn.input('Delete session: ')
+  if session_name ~= '' then
+    MiniSessions.delete(session_name)
+  else
+    print('Session name cannot be empty!')
+  end
+end, { noremap = true, silent = true })
+
+
 -- vim: ts=2 sts=2 sw=2 et
