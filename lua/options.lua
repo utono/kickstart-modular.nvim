@@ -97,6 +97,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
     vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
     vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "none" })
+    -- Additional settings for Neo-tree transparency
+    vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "none" })
   end,
 })
 
