@@ -47,7 +47,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.keymap.set('n', ';', ':', { desc = 'Enter command mode' })
 vim.keymap.set('n', ':', ';', { desc = 'Repeat last f, t, F, or T movement' })
-vim.keymap.set('n', '<Tab>', '<C-^>', { desc = 'Switch to last visited buffer' })
+vim.keymap.set('n', '-', '<C-^>', { desc = 'Switch to last visited buffer' })
 
 vim.keymap.set('n', '<leader>no', '<C-w>_<C-w>|', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>nn', '<C-w>=', { noremap = true, silent = true })
