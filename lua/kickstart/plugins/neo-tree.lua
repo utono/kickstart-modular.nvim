@@ -11,13 +11,15 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal',         silent = true },
+    { ',',  ':Neotree reveal<CR>', desc = 'NeoTree reveal (comma)', silent = true },
   },
   opts = {
     filesystem = {
       window = {
         mappings = {
           ['\\'] = 'close_window',
+          [','] = 'close_window', -- Optional: Map comma to close Neo-tree windows within the plugin
         },
       },
     },
