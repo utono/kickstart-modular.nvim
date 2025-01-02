@@ -88,20 +88,20 @@ vim.opt.hidden = false
 -- })
 
 -- Ensure transparency is applied after colorscheme loads
-vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
+vim.api.nvim_create_autocmd('ColorScheme', {
+  pattern = '*',
   callback = function()
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-    vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
-    vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
-    vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
-    vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "none" })
+    vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'StatusLine', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'StatusLineNC', { bg = 'none' })
     -- Additional settings for Neo-tree transparency
-    vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "none" })
+    vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = 'none' })
   end,
 })
 
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,resize,globals"
+vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,resize,globals'
 -- vim: ts=2 sts=2 sw=2 et
