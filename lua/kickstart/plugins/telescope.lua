@@ -29,9 +29,6 @@ return {
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
-
-      -- Add telescope-zoxide dependency
-      { 'jvgrootveld/telescope-zoxide' },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -69,28 +66,12 @@ return {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
           },
-          -- Configure zoxide extension
-          zoxide = {
-            prompt_title = '[ Zoxide ]',
-            list_command = 'zoxide query -ls',
-            mappings = {
-              default = {
-                action = function(selection)
-                  vim.cmd('cd ' .. selection.path)
-                end,
-                after_action = function(selection)
-                  print('Directory changed to ' .. selection.path)
-                end,
-              },
-            },
-          },
         },
       }
 
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
-      pcall(require('telescope').load_extension, 'zoxide') -- Load the zoxide extension
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
@@ -104,12 +85,6 @@ return {
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-
-      -- Keymap for zoxide using <leader>'
-      vim.keymap.set('n', "<leader>'", function()
-        -- Open the zoxide fuzzy finder list
-        require('telescope').extensions.zoxide.list()
-      end, { desc = '[Z]oxide Fuzzy Finder' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
