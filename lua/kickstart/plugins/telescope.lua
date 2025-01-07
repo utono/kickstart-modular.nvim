@@ -108,6 +108,15 @@ return {
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      -- Keymap for searching .md and .rst files in ~/utono/md-arch
+      vim.keymap.set('n', '<leader>sm', function()
+        builtin.live_grep {
+          cwd = '~/utono/md-arch',
+          glob_pattern = { '*.md', '*.rst' },
+          prompt_title = 'Search Markdown and ReStructuredText Files',
+        }
+      end, { desc = '[S]earch [M]arkdown and RST files' })
     end,
   },
 }

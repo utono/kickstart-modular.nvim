@@ -23,7 +23,7 @@ return {
     pcall(require('telescope').load_extension, 'zoxide')
 
     -- Keymap for zoxide using <leader>'
-    vim.keymap.set('n', "<leader>'", function()
+    vim.keymap.set('n', '<leader>,', function()
       require('telescope').extensions.zoxide.list()
     end, { desc = '[Z]oxide Fuzzy Finder' })
   end,
