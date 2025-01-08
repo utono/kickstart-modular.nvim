@@ -115,6 +115,11 @@ return {
           cwd = '~/utono/md-arch',
           glob_pattern = { '*.md', '*.rst' },
           prompt_title = 'Search Markdown and ReStructuredText Files',
+          layout_config = {
+            width = 0.95, -- 90% of the screen's width
+            height = 0.95, -- 80% of the screen's height
+            preview_width = 0.6, -- Make the preview take 60% of the window width
+          },
         }
       end, { desc = '[S]earch [M]arkdown and RST files' })
     end,
