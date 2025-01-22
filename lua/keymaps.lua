@@ -49,6 +49,12 @@ vim.keymap.set('n', ';', ':', { desc = 'Enter command mode' })
 vim.keymap.set('n', ':', ';', { desc = 'Repeat last f, t, F, or T movement' })
 vim.keymap.set('n', '-', '<C-^>', { desc = 'Switch to last visited buffer' })
 
+-- Remap Shift+U to undo
+vim.keymap.set('n', 'U', 'u', { desc = 'Undo' })
+
+-- Disable the default undo key (u)
+vim.keymap.set('n', 'u', '<Nop>', { desc = 'Disable undo key' })
+
 vim.keymap.set('n', '<leader>dt', ':diffthis<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>do', ':diffoff<CR>', { noremap = true, silent = true })
 

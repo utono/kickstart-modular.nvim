@@ -18,7 +18,6 @@ return {
     filesystem = {
       window = {
         mappings = {
-          ['\\'] = 'close_window',
           [','] = 'close_window', -- Optional: Map comma to close Neo-tree windows within the plugin
         },
       },
