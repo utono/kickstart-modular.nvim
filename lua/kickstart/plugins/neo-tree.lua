@@ -12,7 +12,7 @@ return {
   cmd = 'Neotree',
   keys = {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
-    { ',', ':Neotree focus<CR>', desc = 'NeoTree focus (comma)', silent = true },
+    -- { ',', ':Neotree focus<CR>', desc = 'NeoTree focus (comma)', silent = true },
   },
   opts = {
     filesystem = {
