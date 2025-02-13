@@ -57,6 +57,11 @@ vim.keymap.set('n', 'u', '<Nop>', { desc = 'Disable undo key' })
 
 vim.keymap.set('n', '<leader>dt', ':diffthis<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>do', ':diffoff<CR>', { noremap = true, silent = true })
+-- Change working directory to the directory of the current file
+vim.keymap.set('n', '<leader>cd', function()
+  vim.cmd 'tcd %:h'
+  print('Changed directory to: ' .. vim.fn.getcwd())
+end, { desc = 'Change directory to file location and echo new cwd' })
 
 -- Save session with user prompt
 vim.keymap.set('n', '<leader>ms', function()
