@@ -11,15 +11,15 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal_force_cwd<CR>', desc = 'NeoTree reveal with forced cwd', silent = true },
-    { '+', ':Neotree source=buffers position=right toggle<CR>', desc = 'Toggle NeoTree Buffers Right', silent = true },
-    { 'q', ':Neotree close<CR>', desc = 'Close NeoTree window', silent = true },
+    -- { '\\', ':Neotree reveal_force_cwd<CR>', desc = 'NeoTree reveal with forced cwd', silent = true },
+    -- { '+', ':Neotree source=buffers position=right toggle<CR>', desc = 'Toggle NeoTree Buffers Right', silent = true },
+    -- { 'q', ':Neotree close<CR>', desc = 'Close NeoTree window', silent = true },
   },
   opts = {
     filesystem = {
       window = {
         mappings = {
-          ['\\'] = 'close_window', -- Optional: Map comma to close Neo-tree windows within the plugin
+          -- ['\\'] = 'close_window', -- Optional: Map comma to close Neo-tree windows within the plugin
         },
       },
     },
