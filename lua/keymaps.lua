@@ -93,4 +93,6 @@ vim.keymap.set('n', '<leader>md', function()
   end
 end, { noremap = true, silent = true })
 
+vim.keymap.set('i', 'ht', '<Esc>', { desc = 'Exit insert mode' })
+
 -- vim: ts=2 sts=2 sw=2 et
