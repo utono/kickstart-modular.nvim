@@ -86,19 +86,40 @@ vim.opt.hidden = false
 --   end
 -- })
 
--- Ensure transparency is applied after colorscheme loads
+-- Customize highlights for tokyonight-night after colorscheme loads
 vim.api.nvim_create_autocmd('ColorScheme', {
-  pattern = '*',
+  pattern = 'tokyonight-night',
   callback = function()
+    -- Active window: transparent
     vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+
+    -- Inactive windows: dimmed background
+    -- vim.api.nvim_set_hl(0, 'NormalNC', { bg = '#16161e' })
+    vim.api.nvim_set_hl(0, 'NormalNC', { bg = '#1f2335' }) -- gentle dim
+    -- vim.api.nvim_set_hl(0, 'NormalNC', { bg = '#1a1b26' }) -- same as Normal (almost no dim)
+
+    -- UI elements
     vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
-    vim.api.nvim_set_hl(0, 'StatusLine', { bg = 'none' })
-    vim.api.nvim_set_hl(0, 'StatusLineNC', { bg = 'none' })
-    -- Additional settings for Neo-tree transparency
+    vim.api.nvim_set_hl(0, 'StatusLine', { bg = 'none', underline = true })
+    vim.api.nvim_set_hl(0, 'StatusLineNC', { bg = 'none', fg = '#565f89' })
+
+    -- Neo-tree
     vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = 'none' })
+
+    -- Enhanced diff colors
+    vim.api.nvim_set_hl(0, 'DiffAdd', { fg = '#9ece6a', bg = '#203030', bold = true })
+    vim.api.nvim_set_hl(0, 'DiffDelete', { fg = '#f7768e', bg = '#3b2f33', bold = true })
+    vim.api.nvim_set_hl(0, 'DiffChange', { fg = '#7aa2f7', bg = '#1f2d40' })
+    vim.api.nvim_set_hl(0, 'DiffText', { fg = '#c0caf5', bg = '#394b70', bold = true })
+
+    -- Tabline clarity
+    vim.api.nvim_set_hl(0, 'TabLine', { fg = '#7aa2f7', bg = '#1a1b26' })
+    vim.api.nvim_set_hl(0, 'TabLineSel', { fg = '#1a1b26', bg = '#7aa2f7', bold = true })
+    vim.api.nvim_set_hl(0, 'TabLineFill', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'TabLineModified', { fg = '#e0af68', bold = true })
   end,
 })
 
